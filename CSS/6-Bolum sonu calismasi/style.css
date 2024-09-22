@@ -1,0 +1,51 @@
+.list-unstyled{
+    list-style: none;
+}
+
+.navBar{
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul>li{
+    display: inline;
+    padding: 13px;
+}
+
+ul>li:hover{
+    color: yellow;
+    background-color: blueviolet;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.container{
+    background-color: whitesmoke;
+    height: 70vh;
+    margin: 0;
+    padding: 0;
+}
+
+.sec1{
+    float: left;
+    display: inline;
+    width: 150px;
+    margin: 33px 13px;
+}
+
+.sec2{
+    float: left;
+    display: inline;
+    width: 150px;
+    margin: 33px 13px;
+}
+
+.pic1{
+    border-radius: 15px;
+}
+
+.pic2{
+    border-radius: 100%;
+}
