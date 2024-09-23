@@ -1,12 +1,17 @@
+body{
+    margin: 0;
+}
+
 .list-unstyled{
     list-style: none;
+    float: left;
 }
 
 .navBar{
     float: left;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    margin-bottom: 30px;
+    padding:0;
 }
 
 ul>li{
@@ -22,24 +27,17 @@ ul>li:hover{
 }
 
 .container{
-    background-color: whitesmoke;
-    height: 70vh;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
     margin: 0;
-    padding: 0;
 }
 
 .sec1{
-    float: left;
-    display: inline;
-    width: 150px;
-    margin: 33px 13px;
-}
-
-.sec2{
-    float: left;
-    display: inline;
-    width: 150px;
-    margin: 33px 13px;
+    width: 100px;
+    margin-left: 50%;
+    margin-bottom: 33px;
+    
 }
 
 .pic1{
@@ -48,4 +46,12 @@ ul>li:hover{
 
 .pic2{
     border-radius: 100%;
+}
+
+.lorem3{
+    display: inline;
+}
+
+.right{
+    float: right;
 }
