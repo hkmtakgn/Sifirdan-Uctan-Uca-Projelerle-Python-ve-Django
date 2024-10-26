@@ -85,3 +85,20 @@ new_users_for_discard.discard(
 print(new_users_for_discard)
 # çıktısı: {'Hikmet', 'Ayşe', 'Ahmet', 'Mehmet'}
 print(" - " * 15)
+
+list_one = {
+    "Hikmet", "Ahmet", "Mehmet", "Ayşe", "Fatma", "Mehmet", "Ayşe", "Fatma",
+    "Derin"
+}
+
+list_two = {"Ahmet", "Mehmet", "Ayşe", "Fatma", "Mehmet", "Ayşe", "Fatma"}
+
+print("difference:")
+print(list_one.difference(
+    list_two))  #difference fonksiyonu set'lerde farklı elemanları alır
+print("intersection:")
+print(list_one.intersection(
+    list_two))  #intersection fonksiyonu set'lerde kesişen elemanları alır
+print("union:")
+print(list_one.union(list_two))  #union fonksiyonu set'lerde birleştirir
+
