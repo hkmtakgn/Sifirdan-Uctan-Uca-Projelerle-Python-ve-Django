@@ -101,4 +101,20 @@ print(list_one.intersection(
     list_two))  #intersection fonksiyonu set'lerde kesişen elemanları alır
 print("union:")
 print(list_one.union(list_two))  #union fonksiyonu set'lerde birleştirir
+print(" - " * 15)
+
+list_for_users = [
+    "Hikmet", "Ahmet", "Mehmet", "Ayşe", "Fatma", "Mehmet", "Ayşe", "Fatma"
+]  #liste oluşturuyoruz
+set_for_users = set(list_for_users)  #listeyi set'e çeviriyoruz
+print(set_for_users)
+print(" - " * 15)
+new_dict = {key: None for key in set_for_users}  #set'i dict'e çeviriyoruz
+print(new_dict)
+print(" - " * 15)
+
+new_list_for_users = list(new_dict.keys())  #dict'i listeye çeviriyoruz
+print(new_list_for_users)
+# çıktısı : ['Hikmet', 'Ayşe', 'Ahmet', 'Mehmet', 'Fatma']
+print(" - " * 15)
 
