@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo - Admin Panel</title>
+</head>
+<body>
+    {% for todo in todos %}
+    <div class="container">
+        <h1>Todo - Admin Panel</h1>
+        <h2>Kullanıcı adı : {{todo.title}}</h2>
+        <h2>Açıklama : {{todo.content}}</h2>
+        <h2>Sistem Durumu : {% if todo.is_active == True %}Aktif kullanıcı{% else %}Pasif kullanıcı{% endif %}</h2>
+    </div>
+    {% endfor %}
+</body>
+</html>
