@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="card text-center">
+    <div class="card-header">
+      Todo Detail
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{todo.title}}</h5>
+      <p class="card-text">{{todo.content}}</p>
+      <div class="card-footer text-body-secondary">
+          {% if todo.is_active == True %}
+          Aktif
+          {% else %}
+          Pasif
+          {% endif %}
+      </div>
+    </div>
+    <div class="text-center"><a href="/" class="btn btn-primary">Anasayfa</a></div>
+</div>
+{% endblock content %}
+
