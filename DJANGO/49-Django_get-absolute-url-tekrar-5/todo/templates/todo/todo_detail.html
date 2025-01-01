@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    {% if id %}
+    {% include 'components/card2.html' with todo=todo %}
+    {% else %}
+    <h1>User is not found!</h1>
+    {% endif %}
+{% endblock content %}
+
