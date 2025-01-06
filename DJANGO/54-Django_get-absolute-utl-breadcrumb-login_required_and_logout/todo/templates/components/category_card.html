@@ -1,0 +1,10 @@
+<div class="row">
+  {% for item in cat_todo %}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><a href="{{item.get_absolute_url_two}}" class="text-decoration-none">{{ item.title }}</a></h5>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
