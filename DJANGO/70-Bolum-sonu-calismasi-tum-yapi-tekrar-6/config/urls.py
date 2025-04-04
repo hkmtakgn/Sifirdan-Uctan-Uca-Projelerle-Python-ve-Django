@@ -16,11 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from XDEVS.views import main_views
+from pages.views import (
+    home_views,
+    cat_views,
+    tag_views,
+    dev_views,
+    logout_views,
+    )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('',main_views,name='home'),
-    path ('categories/',include ('XDEVS.urls')),
+    path ("" , home_views , name="home_views"),
+    path ("app2/",include('app2.urls',namespace="app2"),),
+    path ("<int:id>/",dev_views,name="dev_views"),
+    path ("<slug:cat_slug>/",cat_views,name="cat_views"),
+    path ("<slug:cat_slug>/<slug:tag_slug>/",tag_views,name="tag_views"),
+    path ("/logout/",logout_views,name="logout_views"),
 ]
 
