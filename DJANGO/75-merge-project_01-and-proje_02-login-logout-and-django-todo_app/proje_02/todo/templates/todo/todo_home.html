@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Todo-App</h1>
+    {% include 'components/form-control.html' %}
+    <form action="{% url 'delete-item' %}" type="get">
+        <div class="text-center">
+            <ul class="list-unstyled mt-3">
+                {% if tasks %}
+                <hr>
+                {% for task in tasks %}
+                <li class="d-flex justify-content-between m-1">
+                    <span>{{task}}</span>
+                    <form action="{% url 'delete-item' %}" method="get">
+                        <input type="hidden" name="delete-item" value="{{task.id}}">
+                        <button type="submit">Sil</button>
+                    </form>
+                </li>
+                <hr>
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </form>
+</div>
+{% endblock content %}
