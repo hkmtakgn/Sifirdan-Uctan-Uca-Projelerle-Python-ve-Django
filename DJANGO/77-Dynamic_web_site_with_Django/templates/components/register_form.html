@@ -1,0 +1,58 @@
+<form action="{% url 'register_views' %}" method="post" class="container d-flex justify-content-center mt-5">
+    {% csrf_token %}  
+
+    <div class="row g-3 align-items-center d-flex flex-column">
+
+      <!-- username-start -->
+        <div class="col-auto">
+          <label for="input_username6" class="col-form-label">Username</label>
+        </div>
+        <div class="col-auto">
+          <input type="text" id="input_username6" name="username" class="form-control" aria-describedby="usernameHelpInline">
+        </div>
+        <!-- username-end -->
+         
+
+      <!-- password-start -->
+        <div class="col-auto">
+          <label for="inputPassword6" class="col-form-label">Password</label>
+        </div>
+        <div class="col-auto">
+          <input type="password" id="inputPassword6" name="password" class="form-control" aria-describedby="passwordHelpInline">
+        </div>
+        <!-- password-end -->
+
+      <!-- confirm-password-start -->
+        <div class="col-auto">
+          <label for="input_confirm_Password6" class="col-form-label">Confirm Password</label>
+        </div>
+        <div class="col-auto">
+          <input type="password" id="input_confirm_Password6" name="confirm_password" class="form-control" aria-describedby="confirm_passwordHelpInline">
+        </div>
+        <!-- confirm-password-end -->
+
+      <!-- email-start -->
+        <div class="col-auto">
+          <label for="input_email" class="col-form-label">E-Mail</label>
+        </div>
+        <div class="col-auto">
+          <input type="email" id="input_email" name="email" class="form-control" aria-describedby="emailHelpInline">
+        </div>
+        <!-- email-end -->
+
+      <!-- confirm-email-start -->
+        <div class="col-auto">
+          <label for="input_confirm_email" class="col-form-label">Confirm E-Mail</label>
+        </div>
+        <div class="col-auto">
+          <input type="email" id="input_confirm_email" name="confirm_email" class="form-control" aria-describedby="confirm_emailHelpInline">
+        </div>
+        <!-- confirm-email-end -->
+
+        <div class="d-flex flex-row justify-content-center">
+          <button type="submit" class="btn btn-info w-25 d-flex justify-content-center me-1">Save</button>
+        </div>
+
+      </div>
+
+</form>
