@@ -1,8 +1,0 @@
-<ul class="list-group">
-  <h1>{{tag_title.title}}</h1>
-    {% for developer in developers %}
-    <li class="list-group-item"><a href="{% url 'dev_details' id=developer.pk %}" class="text-decoration-none">{{developer.title}}</a></li>
-    {% endfor %}
-  </ul>
-
-  

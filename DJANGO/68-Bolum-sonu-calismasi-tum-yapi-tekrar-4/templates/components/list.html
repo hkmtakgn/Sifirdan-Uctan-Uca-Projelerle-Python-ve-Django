@@ -1,7 +1,0 @@
-<ul class="list-group">
-  {% for user in developers %}
-    <li class="list-group-item"><a href="{% url 'dev_details' id=user.pk %}" class="text-decoration-none px-5"><span>{{user.title}}</span> - <span>{{user.category.title}}</span></a></li>
-  {% endfor %}
-  </ul>
-
-  

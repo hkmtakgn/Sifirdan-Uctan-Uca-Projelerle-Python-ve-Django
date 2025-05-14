@@ -1,8 +1,0 @@
-[✔] - py manage.py shell
-[✔] - from todo.models import Todo 
-[✔] - Todo.objects.all()    
-[✔] - Todo.objects.all().count() 
-[✔] - Todo.objects.all().filter(is_active=True) 
-[✔] - Todo.objects.all().filter(is_active=True).count()
-[✔] - Todo.objects.all().create(title="Deneme_shell",content="deneme_shell",is_active="True")
-[✔] - Todo.objects.all().filter(is_active=True).delete()

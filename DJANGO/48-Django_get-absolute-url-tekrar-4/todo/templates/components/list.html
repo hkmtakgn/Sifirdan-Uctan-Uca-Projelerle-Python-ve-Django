@@ -1,7 +1,0 @@
-<ul class="list-group">
-    {% for todo in todos %}
-      <li class="list-group-item d-flex justify-content-between"><a href="{{todo.get_absolute_url}}">{{todo.title}}</a><span>{{todo.content}}</span><span>{{todo.category.title}}</span></li>
-    {% endfor %}
-  </ul>
-
-  

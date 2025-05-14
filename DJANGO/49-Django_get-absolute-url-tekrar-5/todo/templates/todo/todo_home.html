@@ -1,9 +1,0 @@
-{% extends 'core/base.html' %}
-
-{% block content %}
-{% if page_title == "Nova Team" %}
-<h1>{{page_title}}</h1>
-{% include 'components/list.html' with todos=todos %}
-{% endif %}
-{% endblock content %}
-
