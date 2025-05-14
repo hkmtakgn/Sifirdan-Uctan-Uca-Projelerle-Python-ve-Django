@@ -1,0 +1,6 @@
+<ul class="list-group">
+    {% for todo in todos %}
+    <li class="list-group-item d-flex justify-content-around"><span>User : {{todo.title}}</span><span>Status : {{todo.content}}</span><span>Mail Adress : {{todo.mail_address}}</span></li>
+    {% endfor %}
+  </ul>
+

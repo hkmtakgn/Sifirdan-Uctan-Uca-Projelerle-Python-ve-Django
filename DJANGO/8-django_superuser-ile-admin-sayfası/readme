@@ -1,0 +1,13 @@
+#py -m venv venv
+#venv/scripts/activate
+#py -m pip install --upgrade pip
+#pip install django
+#django-admin startproject proje_01 .
+#django-admin startapp page
+#urls,views,settings configurations
+#py manage.py migrate
+#py manage.py createsuperuser
+#superuser configurations
+#py manage.py runserver
+#live broadcast
+#end

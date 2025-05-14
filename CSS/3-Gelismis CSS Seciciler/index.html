@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelismis CSS Seciciler</title>
+    <style>
+        #title{
+            color: blue;
+        }
+        .titleTwo{
+            color: chocolate;
+        }
+        #titleTwo{
+            color: yellow;
+        }
+        .titleThree{
+            color: blue;
+        }
+        .titleThree2{
+            color: yellow;
+        }
+        .titleOne.titleOne2{
+            color: blue;
+        }
+        .titleOneOutside .divOneInside{
+            color: blue;
+        }
+        .one .two .three{
+            color:blueviolet;
+        }
+        ul a{
+            color: yellow;
+        }
+        ol>a{
+            color: yellow;
+        }
+        ol>li>a{
+            color:green;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="title">Gelismis CSS Seciciler</h1>
+    <h2 class="titleTwo" id="titleTwoId">Baslik-2</h2>
+    <h3 class="titleThree titleThree2" id="titleThreeId">Baslik-3</h3>
+    <h1 class="titleOne titleOne2">Merhaba</h1>
+    <h1 class="titleOne">Merhaba</h1>
+    <h1 class="titleOne2">Merhaba</h1>
+    <div class="titleOneOutside">
+        <h2 class="divOneInside">Merhaba</h2>
+    </div>
+    <div class="one">
+        <div class="two">
+            <div class="three">Three</div>
+        </div>
+    </div>
+    <ul>
+        <a href="">link-1</a>
+        <li><a href="">link-2</a>
+            <br>
+            <a href="">link-3</a>
+            <br>
+            <a href="">link-4</a></li>
+            <br>
+    </ul>
+    <ol>
+        <a href="">link-1</a><br>
+        <li><a href="">link-2</a>
+            <br>
+            <a href="">link-3</a>
+            <br>
+            <a href="">link-4</a></li>
+            <br>
+    </ol>
+</body>
+</html>

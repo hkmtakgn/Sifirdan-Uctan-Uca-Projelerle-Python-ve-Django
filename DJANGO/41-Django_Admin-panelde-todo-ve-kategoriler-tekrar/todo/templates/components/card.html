@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-body">
+      <h3 class="card-title">{% if todo_detail.is_active %}<span class="text-info">Aktif</span>{% else %}<span class="text-danger">Pasif</span>{% endif %}</h3>
+      <h5 class="card-title">{{todo_detail.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Kategori - {{todo_detail.category.title}}</h6>
+      <p class="card-text">{{todo_detail.content}}</p>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Oluşturulma tarihi : {{todo_detail.created_at}}</h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Güncellenme tarihi : {{todo_detail.updated_at}}</h6>
+      <a href="{% url 'todo_views' %}" class="card-link">Listeye dön</a>
+    </div>
+  </div>
+

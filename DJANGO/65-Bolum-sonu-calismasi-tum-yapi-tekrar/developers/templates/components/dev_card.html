@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{developer.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">{{developer.category.title}}</h6>
+      {% for tag in developer.tag.all %}
+      <span class="badge rounded-pill text-bg-danger"><a href="{% url 'tag_views' tag_slug=tag.slug %}" class="badge rounded-pill text-decoration-none">{{tag.title}}</a></span>
+      {% endfor %}
+    </div>
+    <a href="../" class="card-link btn btn-info">Home</a>
+  </div>
+
+

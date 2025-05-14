@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+{{page.content|safe}}
+{% if page.slug == "ana-sayfa" %}
+{% for item in items %}
+{% include 'components/dev_card.html' with item=item %}
+{% endfor %}
+<div class="container d-flex justify-content-center">
+    {% if items.has_previous %}
+<a href="?page=1" class="btn btn-info m-1">First</a>
+<a href="?page={{items.previous_page_number}}" class="btn btn-info m-1"><< Prev</a>
+{% endif %}
+{% if items.has_next %}
+<a href="?page={{items.next_page_number}}" class="btn btn-info m-1">Next >></a>
+<a href="?page={{items.paginator.num_pages}}" class="btn btn-success m-1">Last</a>
+{% endif %}
+{% endif %}
+</div>
+<div class="m-1 btn btn-muted text-light text-center w-100">{{items.number}}  of  {{items.paginator.num_pages}}</div>
+{% endblock content %}
+

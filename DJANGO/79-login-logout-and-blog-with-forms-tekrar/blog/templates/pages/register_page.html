@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Register_Page</h1>
+        <form action="{% url 'register_views' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+    </div>
+{% endblock content %}
+

@@ -1,0 +1,5 @@
+<ul class="list-group">
+    {% for item in todos%}
+    <li class="list-group-item"><a href="{% url 'todo_detail' id=item.pk %}">{{item.title}}</a></li>
+    {% endfor %}
+  </ul>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./normalizeCss.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Kutu Ozellikleri</title>
+    <style>
+        .container{
+            background-color: chartreuse;
+            width: 300px;
+            height: 300px;
+            margin:10px 30px;
+            padding: 50px;
+        }
+
+        .containerMini{
+            background-color: brown;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 3px;
+        }
+
+        .box{
+            background-color: yellow;
+        }
+
+        .box>a{
+            background-color: gray;
+            color: white;
+        }
+
+        .box>a:hover{
+            background-color: darkblue;
+        }
+
+        .fourthLink{
+            display: block;
+        }
+        
+    </style>
+</head>
+<body style="background-color: bisque;">
+    <h1>Css Kutu Özellikleri</h1>
+    <!-- 
+    -normalize css imported
+    -background
+    -color
+    -width
+    -height
+    -display
+    -hover
+    -margin
+    -padding
+    -border
+    -border-radius
+    -->
+    <div class="container">
+        <div class="containerMini">
+            <div class="box"><a href="">Lorem, ipsum dolor.</a></div>
+            <div class="box"><a href="">Eos, tempora magnam?</a></div>
+            <div class="box"><a href="">Possimus, qui veniam.</a></div>
+        </div>
+        <div class="containerMini">
+            <div class="box"><a href="" class="fourthLink">Lorem, ipsum dolor.</a></div>
+            <div class="box"><a href="">Facere, vero error!</a></div>
+            <div class="box"><a href="">Facilis, amet deleniti!</a></div>
+        </div>
+        <div class="containerMini">
+            <div class="box"><a href="">Lorem, ipsum dolor.</a></div>
+            <div class="box"><a href="">Tempore, id itaque.</a></div>
+            <div class="box"><a href="">Nisi, maxime deleniti.</a></div>
+        </div>
+    </div>
+</body>
+</html>

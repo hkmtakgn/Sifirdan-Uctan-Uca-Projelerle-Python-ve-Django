@@ -1,0 +1,32 @@
+<form action="{% url 'login_views' %}" method="post" class="container d-flex justify-content-center mt-5">
+    {% csrf_token %}  
+
+    <div class="row g-3 align-items-center d-flex flex-column">
+
+      <!-- col-start -->
+        <div class="col-auto">
+          <label for="input_username6" class="col-form-label">Username</label>
+        </div>
+        <div class="col-auto">
+          <input type="text" id="input_username6" name="username" class="form-control" aria-describedby="usernameHelpInline">
+        </div>
+        <!-- col-end -->
+         
+
+      <!-- col-start -->
+        <div class="col-auto">
+          <label for="inputPassword6" class="col-form-label">Password</label>
+        </div>
+        <div class="col-auto">
+          <input type="password" id="inputPassword6" name="password" class="form-control" aria-describedby="passwordHelpInline">
+        </div>
+        <!-- col-end -->
+
+        <div class="d-flex flex-row justify-content-center">
+          <button type="submit" class="btn btn-info w-25 d-flex justify-content-center me-1">Login</button>
+          <button class="btn btn-info d-flex justify-content-center"><a href="{% url 'register_views' %}" class="text-decoration-none text-dark">Register</a></button>
+        </div>
+
+      </div>
+
+</form>

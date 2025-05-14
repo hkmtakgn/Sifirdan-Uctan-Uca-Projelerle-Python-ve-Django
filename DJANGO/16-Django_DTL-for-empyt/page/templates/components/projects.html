@@ -1,0 +1,12 @@
+<div class="row">
+    {% for item in FAKE_DB_PROJECTS %}
+    <div class="card me-3" style="width: 7rem;">
+      <img src="{{ item }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Lorem, ipsum dolor.</p>
+      </div>
+    </div>
+    {% empty %}
+    <h1>Proje bulunamadı...</h1>
+    {% endfor %}
+  </div>

@@ -1,0 +1,13 @@
+<div class="row">
+    {% for pro_pic in twenty_picsum %}
+    <div class="card m-1" style="width: 13rem;">
+        <img src="{{ pro_pic.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Urun {{ pro_pic.id }}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <!-- Burada product_id'yi URL'ye geçiriyoruz -->
+            <a href="{% url 'detail_pro_name' product_id=pro_pic.id %}" class="btn btn-primary">Ürün Detayı</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>

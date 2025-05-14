@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1>{{page_title}}</h1>
+<div class="container d-flex justify-content-center">
+    {% include 'components/card2.html' with item=item %}
+</div>
+{% endblock content %}
+

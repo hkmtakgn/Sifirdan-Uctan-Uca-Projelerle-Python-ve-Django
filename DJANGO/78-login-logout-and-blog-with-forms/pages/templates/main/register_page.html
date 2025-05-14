@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="conteiner">
+        <h1 class="text-center">{{ page_title }}</h1>
+        <form method="post" action="{% url 'register_views' %}" class="text-center">
+            {% csrf_token %}
+            {{ reg_form.as_p }}
+            <button type="submit" class="btn btn-info">Kaydet</button>
+        </form>
+    </div>
+{% endblock content %}
+

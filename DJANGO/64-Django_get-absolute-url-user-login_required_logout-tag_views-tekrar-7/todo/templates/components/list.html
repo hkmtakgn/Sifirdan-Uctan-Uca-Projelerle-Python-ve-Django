@@ -1,0 +1,8 @@
+<ul class="list-group">
+  <h1>{{page_title}}</h1>
+  {% for todo in todos %}
+    <li class="list-group-item"><a href="{{todo.get_absolute_url}}" class="text-decoration-none">{{todo.title}}</a></li>
+  {% endfor %}
+  </ul>
+
+  

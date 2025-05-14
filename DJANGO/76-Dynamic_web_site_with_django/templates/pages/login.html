@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<form method="post" action="{% url 'login_views' %}" class="text-center mt-5">
+    {% csrf_token %}
+    
+    <div class="col-auto">
+      <label for="name_input">Username</label><br>
+      <input type="text" name="username" id="name_input">
+    </div>
+
+    <div class="col-auto">
+      <label for="pass_input">Password</label><br>
+      <input type="password" name="password" id="pass_input">
+    </div>
+
+    <button type="submit" class="btn btn-info mt-1">Giris</button>
+    <button type="button" class="btn btn-info mt-1"><a href="{% url 'register' %}" class="text-decoration-none text-dark">Kaydol</a></button>
+
+  </form>
+{% endblock content %}
