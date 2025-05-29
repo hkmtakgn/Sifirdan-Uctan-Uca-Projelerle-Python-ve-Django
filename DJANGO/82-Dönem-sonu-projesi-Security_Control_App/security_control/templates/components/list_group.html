@@ -1,0 +1,126 @@
+{% if title == "visitor" %}
+
+<table class="table">
+  <thead>
+    <tr>
+      {% if not items %}
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+      {% else %}
+      <th scope="col">#</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Company</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Date Of Entry</th>
+      <th scope="col">Time Of Entry</th>
+      {% if title == "visitor" %}
+      <th scope="col">Meeting With</th>
+      {% endif %}
+      <th scope="col">Purpose Of Visit</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    {% if items %}
+      {% for item in items %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td><a href="{% url 'visitor-detail' id=item.id %}" class="text-decoration-none text-info">{{ item.full_name }}</a></td>
+        <td>{{ item.company }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phone_number }}</td>
+        <td>{{ item.date_of_entry }}</td>
+        <td>{{ item.time_of_entry }}</td>
+        <td>{{ item.meeting_with }}</td>
+        <td>{{ item.purpose_of_visit }}</td>
+        </tr>
+      {% endfor %}
+    {% else %}
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+      {% endif %}
+    </tr>
+
+  </tbody>
+</table>
+
+{% elif title == "subcontractor" %}
+
+<table class="table">
+  <thead>
+    <tr>
+      {% if not subcontractor_items %}
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+      {% else %}
+      <th scope="col">#</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Company</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Date Of Entry</th>
+      <th scope="col">Time Of Entry</th>
+      <th scope="col">Purpose Of Visit</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    {% if subcontractor_items %}
+      {% for subcontractor_item in subcontractor_items %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td><a href="{% url 'subcontractor-detail' id=subcontractor_item.id %}" class="text-decoration-none text-info">{{ subcontractor_item.full_name }}</a></td>
+        <td>{{ subcontractor_item.company }}</td>
+        <td>{{ subcontractor_item.email }}</td>
+        <td>{{ subcontractor_item.phone_number }}</td>
+        <td>{{ subcontractor_item.date_of_entry }}</td>
+        <td>{{ subcontractor_item.time_of_entry }}</td>
+        <td>{{ subcontractor_item.purpose_of_visit }}</td>
+        </tr>
+      {% endfor %}
+    {% else %}
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+      {% endif %}
+    </tr>
+
+  </tbody>
+</table>
+
+{% endif %}
+
