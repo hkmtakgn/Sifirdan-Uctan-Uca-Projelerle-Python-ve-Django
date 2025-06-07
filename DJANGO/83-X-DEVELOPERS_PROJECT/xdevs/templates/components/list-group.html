@@ -1,0 +1,8 @@
+<ul class="list-group w-100 text-center mt-5">
+  {% if items %}
+    {% for item in items %}
+  <li class="list-group-item"><a href="{% url 'langs' page_slug=page.slug lang_slug=item.slug %}" class="text-decoration-none text-dark">{{ item.title }}</a></li>
+    {% endfor %}
+  {% endif %}
+</ul>
+
