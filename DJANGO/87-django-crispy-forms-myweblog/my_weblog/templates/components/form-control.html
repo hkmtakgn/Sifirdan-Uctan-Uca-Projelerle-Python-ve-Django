@@ -1,0 +1,15 @@
+<form action="{% url 'add_post' %}" method="post" class="my-5 mx-auto text-center" style="max-width:50%" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% load crispy_forms_tags %}
+  {% csrf_token %}
+  {% for field in post_form %}
+    {% if field.name != "is_active" %}
+      {{ field|as_crispy_field }}
+    {% elif field.name == "is_active" %}
+      <div class="d-flex justify-content-center">
+        {{ field|as_crispy_field }}
+      </div>
+    {% endif %}
+  {% endfor %}
+<button type="submit" class="btn btn-info">Kaydet</button>
+</form>
