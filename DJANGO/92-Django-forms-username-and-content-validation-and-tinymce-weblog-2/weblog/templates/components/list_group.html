@@ -1,0 +1,6 @@
+<ul class="list-group mt-5">
+  {% for post in posts %}
+  <li class="list-group-item">{% include 'components/card.html' with post=post %}</li>
+  {% endfor %}
+</ul>
+
