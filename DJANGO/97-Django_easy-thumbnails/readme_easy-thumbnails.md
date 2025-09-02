@@ -15,4 +15,4 @@
 }
 
 5- {% load thumbnail %}
-<img src="{{ post.post_img|thumbnail_url:'avatar' }}" alt="post_img" style="width:33%;height:33vh;margin:3px;border-radius:33px;">
+<!-- <img src="{{ post.post_img|thumbnail_url:'avatar' }}" alt="post_img" style="width:33%;height:33vh;margin:3px;border-radius:33px;"> -->
