@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h2>{{ page_title }}</h2>
+    {% for fav_post in fav_posts %}
+    <ul class="list-group list-group-flush">
+        <div class="d-flex flex-row">
+            <li class="list-group-item rounded"><a href="{% url 'weblog:post-detail' id=fav_post.id %}" class="text-decoration-none">{{ fav_post.user }} | <span class="ms-1">{{ fav_post.post }} {{ fav_post.is_active }}</span> <br> <span class="ms-1">{{ fav_post.created_at }}</span></a></li>
+
+        </div>
+        <hr>
+    </ul>
+    {% endfor %}
+  </div>
+{% endblock content %}
+
