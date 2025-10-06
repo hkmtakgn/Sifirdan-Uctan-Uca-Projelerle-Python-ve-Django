@@ -1,0 +1,15 @@
+<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
+<script>
+  let fav_posts = document.querySelectorAll("[data-slug]")
+  fav_posts.forEach(item => item.addEventListener("click",event => {
+    event.preventDefault()
+    let slug = event.target.getAttribute("data-slug")
+    let form = new FormData()
+    form.append("slug",slug)
+    form.append("csrfmiddlewaretoken","{{ csrf_token }}")
+    axios.post("/fav-update/",form)
+    window.location.href = window.location.href
+  }))
+</script>
+
