@@ -1,0 +1,27 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1>{{ page.title }}</h1>
+
+            {% if page.page_bg_img %}
+                <img src="{{ page.page_bg_img.url }}" class="img-fluid mb-3" alt="{{ page.title }}">
+            {% endif %}
+
+            {% if page.page_avatar %}
+                <img src="{{ page.page_avatar.url }}" class="rounded-circle mb-3" width="100" height="100" alt="{{ page.title }}">
+            {% endif %}
+
+            {% if page.content %}
+                <div class="content">
+                    {{ page.content|linebreaks }}
+                </div>
+            {% else %}
+                <p>Bu sayfa için henüz içerik eklenmemiş.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
