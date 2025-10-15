@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+  {% block content %}
+    <div class="d-flex flex-row justify-content-center container mt-4">
+      <div class="card w-75">
+        <img src="{{ post.post_img.url }}" class="card-img-top" alt="{{ post.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.content }}</p>
+              <a href="{% url 'weblog:home' %}" class="btn btn-primary">Get Posts</a>
+            <a href="{% url 'weblog:edit-post' post_slug=post.slug %}" class="btn btn-secondary ms-1">Edit</a>
+          </div>
+      </div>
+    </div>
+  {% endblock content %}
+  
