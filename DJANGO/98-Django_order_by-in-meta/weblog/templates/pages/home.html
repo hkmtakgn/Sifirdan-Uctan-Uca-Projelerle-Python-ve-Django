@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+{% load thumbnail %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-info">Home Page</h1>
+  <hr>
+  <div class="row d-flex flex-row align-items-center">
+    {% if posts %}
+      {% for post in posts %}
+        <div>
+
+          <div>
+            <div><small>
+              {{ post.user }}
+            </small> <br>
+              {% if post.post_img %}
+                <img src="{{ post.post_img|thumbnail_url:'post_img' }}" alt="post_img" style="width:33%;height:33vh;margin:3px;border-radius:33px;">
+              {% else %}
+                <!-- Eğer resim yoksa, burada varsayılan bir resim gösterilebilir -->
+                <img src="/media/default.jpg" alt="default_img" style="width:33%;height:33vh;margin:3px;border-radius:33px;">
+              {% endif %}
+            <h3>
+              {{ post.title }}
+            </h3>
+            <p>
+              {{ post.content|safe }}
+            </p></div>
+              <a href="{% url 'edit_item' id=post.id %}" class="btn btn-secondary" type="submit">Edit</a>
+              <a href="{% url 'delete_item' id=post.id %}" class="btn btn-danger" type="submit">Delete</a>
+              <a href="{% url 'favs' id=post.id %}" class="btn {% if post.favs == True %}btn-danger{% else %}btn-primary{% endif %}" type="submit">Fav ♥</a>
+          </div>
+
+          
+        </div>
+    <hr class="m-3">
+      {% endfor %}
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        {% if posts.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{posts.previous_page_number}}">Prev</a></li>
+        {% endif %}
+        <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+        <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+        <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+        <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
+        {% if posts.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{posts.next_page_number}}">Next</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}
+
+

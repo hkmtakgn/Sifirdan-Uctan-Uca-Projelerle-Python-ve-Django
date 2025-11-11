@@ -1,0 +1,92 @@
+<form enctype="multipart/form-data" class="d-flex justify-content-center flex-column m-0" method="post" action="{% if VisitorForm %}{% url 'visitor-register' %}{% elif SubcontractorForm %}{% url 'subcontractor-register' %}{% endif %}">
+  {% csrf_token %}
+  {% if VisitorForm %}
+    <div class="d-flex justify-content-center align-items-center flex-row">
+      <div class="m-3">
+        <label for="full_name" class="form-label">{{ VisitorForm.full_name.label }}</label> <br>
+        {{ VisitorForm.full_name }}
+      </div>
+      <div class="m-3">
+        <label for="company" class="form-label">{{ VisitorForm.company.label }}</label> <br>
+        {{ VisitorForm.company }}
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center flex-row">
+    <div class="m-3">
+      <label for="email" class="form-label">{{ VisitorForm.email.label }}</label> <br>
+      {{ VisitorForm.email }}
+    </div>
+    <div class="m-3">
+      <label for="phone_number" class="form-label">{{ VisitorForm.phone_number.label }}</label> <br>
+      {{ VisitorForm.phone_number }}
+    </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center flex-row">
+    <div class="m-3">
+      <label for="date_of_entry" class="form-label">Date Of Entry</label> <br>
+      {{ VisitorForm.date_of_entry }}
+    </div>
+    <div class="m-3">
+      <label for="time_of_entry" class="form-label">Time Of Entry</label> <br>
+      {{ VisitorForm.time_of_entry }}
+    </div>
+      </div>
+    <div class="m-3">
+      <label for="meeting_with" class="form-label">{{ VisitorForm.meeting_with.label }}</label> <br>
+      {{ VisitorForm.meeting_with }}
+    </div>
+    <div class="m-3">
+      <label for="purpose_of_visit" class="form-label">{{ VisitorForm.purpose_of_visit.label }}</label> <br>
+      {{ VisitorForm.purpose_of_visit }}
+    </div>
+    <div class="m-3">
+      <label for="rules_form" class="form-label">{{ VisitorForm.rules_form.label }}</label> <br>
+      {{ VisitorForm.rules_form }}
+    </div>
+  {% elif SubcontractorForm %}
+    <div class="d-flex justify-content-center align-items-center flex-row">
+      <div class="m-3">
+        <label for="full_name" class="form-label">{{ SubcontractorForm.full_name.label }}</label> <br>
+        {{ SubcontractorForm.full_name }}
+      </div>
+      <div class="m-3">
+        <label for="company" class="form-label">{{ SubcontractorForm.company.label }}</label> <br>
+        {{ SubcontractorForm.company }}
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center flex-row">
+    <div class="m-3">
+      <label for="email" class="form-label">{{ SubcontractorForm.email.label }}</label> <br>
+      {{ SubcontractorForm.email }}
+    </div>
+    <div class="m-3">
+      <label for="phone_number" class="form-label">{{ SubcontractorForm.phone_number.label }}</label> <br>
+      {{ SubcontractorForm.phone_number }}
+    </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center flex-row">
+    <div class="m-3">
+      <label for="date_of_entry" class="form-label">Date Of Entry</label> <br>
+      {{ SubcontractorForm.date_of_entry }}
+    </div>
+    <div class="m-3">
+      <label for="time_of_entry" class="form-label">Time Of Entry</label> <br>
+      {{ SubcontractorForm.time_of_entry }}
+    </div>
+      </div>
+    <div class="m-3">
+      <label for="meeting_with" class="form-label">{{ SubcontractorForm.meeting_with.label }}</label> <br>
+      {{ SubcontractorForm.meeting_with }}
+    </div>
+    <div class="m-3">
+      <label for="purpose_of_visit" class="form-label">{{ SubcontractorForm.purpose_of_visit.label }}</label> <br>
+      {{ SubcontractorForm.purpose_of_visit }}
+    </div>
+    <div class="m-3">
+      <label for="rules_form" class="form-label">{{ SubcontractorForm.rules_form.label }}</label> <br>
+      {{ SubcontractorForm.rules_form }}
+    </div>
+  {% endif %}
+  <button type="submit" class="btn btn-primary mb-5">Submit</button>
+</form>
+

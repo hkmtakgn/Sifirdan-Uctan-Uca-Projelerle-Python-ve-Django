@@ -1,0 +1,6 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1>Welcome to {{page_title}}!</h1>
+<a href="{% url 'app2_view' slug="app2_hub" %}" class="btn btn-info">App2_hub</a>
+{% endblock content %}

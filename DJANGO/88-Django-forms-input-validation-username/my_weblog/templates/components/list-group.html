@@ -1,0 +1,8 @@
+<ul class="list-group mx-auto my-5">
+  {% if posts %}
+  {% for post in posts %}
+  <li class="list-group-item border border-0 d-flex justify-content-center">{% include 'components/card.html' with post=post %}</li>
+  {% endfor %}
+  {% endif %}
+</ul>
+

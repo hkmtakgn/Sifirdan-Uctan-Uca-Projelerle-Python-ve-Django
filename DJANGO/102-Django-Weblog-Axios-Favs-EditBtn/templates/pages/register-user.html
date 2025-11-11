@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container mt-4" {% if page.page_bg_img %}
+         style="background-image: url('{{ page.page_bg_img.url }}'); 
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat;"
+     {% endif %}>
+    <h2>{{ page_title }}</h2>
+    <form method="post">
+        {% load crispy_forms_tags %}
+        {% csrf_token %}
+        {{ user_form|crispy }}
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{todo.title}}</h5>
+      <h6 class="card-title">{{todo.category.title}}</h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary">{% if todo.is_active %}<span class="text-info">Aktif</span>{% else %}<span class="text-danger">Pasif</span>{% endif %}</h6>
+      <p class="card-text">{{todo.content}}</p>
+      <a href="{% url 'todo_home' %}" class="card-link">Listeye dön</a>
+    </div>
+  </div>
+

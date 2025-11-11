@@ -1,0 +1,21 @@
+# Yeni todo oluşturma
+todos.create(title="Ahmet",content="Moderatör",is_active="False")
+
+# Ahmet olanın is_active bilgisini True yap
+todos.filter(title="Ahmet").update(is_active=True)
+
+# is_active bilgisi True olmayanları True yap
+todos.exclude(is_active=True).update(is_active=True)
+
+# title bilgisi Oya olanların is_active bilgisini False yap
+todos.filter(title="Oya").update(is_active=False)
+
+# büyük veya küçük harf farketmeksizin Hikmet olanları filtrele
+todos.filter(title__icontains="Hikmet")
+
+# büyük veya küçük harf farketmeksizin title bilgisinde Hikmet olanları Hiko olarak güncelle
+todos.filter(title__icontains="Hikmet").update(title="Hiko")
+
+# büyük veya küçük harf farketmeksizin title bilgisinde Hiko olanları Hikmet olarak güncelle
+todos.filter(title__icontains="Hiko").update(title="Hikmet")
+

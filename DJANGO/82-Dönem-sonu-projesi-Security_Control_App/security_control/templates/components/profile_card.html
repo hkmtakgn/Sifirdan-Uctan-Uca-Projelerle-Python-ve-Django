@@ -1,0 +1,33 @@
+{% if item %}
+
+<div class="card text-center border border-0 m-0 p-5 d-flex justify-content-center align-items-center" data-bs-theme="dark">
+  {% if item.rules_form %}
+  <img src="{{ item.rules_form.url }}" style="width:30%; height:77vh;" class="card-img-top border rounded" alt="...">
+  {% else %}
+  <h1>File not uploaded !</h1>
+  <img src="/media/if_error/error_file.jpg" style="width:30%; height:77vh;" class="card-img-top border rounded" alt="...">
+  {% endif %}
+  <div class="card-body">
+    <h5 class="card-title">{{ item.full_name }}</h5>
+    <p class="card-text">{{ item.purpose_of_visit }}</p>
+    <a href="../" class="btn btn-info">Go Back</a>
+    <a href="{% url 'home' %}" class="btn btn-info">Go Home</a>
+  </div>
+</div>
+
+{% elif subcontractor_item %}
+<div class="card text-center border border-0 m-0 p-5 d-flex justify-content-center align-items-center" data-bs-theme="dark">
+  {% if subcontractor_item.rules_form %}
+  <img src="{{ subcontractor_item.rules_form.url }}" style="width:30%; height:77vh;" class="card-img-top border rounded" alt="...">
+  {% else %}
+  <h1>File not uploaded !</h1>
+  <img src="/media/if_error/error_file.jpg" style="width:30%; height:77vh;" class="card-img-top border rounded" alt="...">
+  {% endif %}
+  <div class="card-body">
+    <h5 class="card-title">{{ subcontractor_item.full_name }}</h5>
+    <p class="card-text">{{ subcontractor_item.purpose_of_visit }}</p>
+    <a href="../" class="btn btn-info">Go Back</a>
+    <a href="{% url 'home' %}" class="btn btn-info">Go Home</a>
+  </div>
+</div>
+{% endif %}

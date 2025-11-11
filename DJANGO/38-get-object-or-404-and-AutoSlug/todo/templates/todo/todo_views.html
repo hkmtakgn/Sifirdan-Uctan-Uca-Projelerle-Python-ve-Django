@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<h1>Todos</h1>
+{% include 'components/list-group.html' with todos=todos %}
+<div class="container text-center">
+    <h1>Kategoriler</h1>
+    <ul>
+        {% for category in categories %}
+        <div>
+        <li>Kategori Adı : {{category.title}}</li>
+        <li>Slug : {{category.slug}}</li>
+        </div>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
+

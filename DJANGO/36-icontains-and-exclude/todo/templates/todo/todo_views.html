@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django | Todos</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <div class="container">
+        <h2>Active Users : {{actives.count}}</h2>
+        {% for active in actives %}
+        <h3><span>{{active.title}}</span> - <span>{{active.content}}</span></h3>
+        {% endfor %}
+        <h2>passive Users : {{passives.count}}</h2>
+        {% for passive in passives %}
+        <h3><span>{{passive.title}}</span> - <span>{{passive.content}}</span></h3>
+        {% endfor %}
+    </div>
+</body>
+</html>

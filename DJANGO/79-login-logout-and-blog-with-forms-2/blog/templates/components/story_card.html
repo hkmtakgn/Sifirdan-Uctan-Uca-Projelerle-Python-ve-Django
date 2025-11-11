@@ -1,0 +1,13 @@
+<div class="card me-3 p-0 mt-3" style="width: 18rem;">
+  <div class="card-img-overlay d-flex justify-content-start " style="max-height: 13vh;" >
+    <h3 class="card-title btn btn-outline-secondary border border-1 border-primary text-light">{{ story.username }}</h3>
+  </div>
+  <img src="{{ story.avatar.url }}" class="card-img-top" style="height: 50%;" alt="...">
+  <div class="card-body">
+    <p class="card-text" style="max-height: 100px; overflow-y: scroll;">{{ story.post_content }}</p>
+    <small>
+        {{ story.get_dept_display }}
+    </small>
+  </div>
+</div>
+

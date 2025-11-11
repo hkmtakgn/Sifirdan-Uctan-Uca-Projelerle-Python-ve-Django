@@ -1,0 +1,50 @@
+{% if posts %}
+{% for post in posts %}
+<hr class="text-light">
+            <div class="d-flex flex-fill card mb-3 border-0 text-center border border-success border-opacity-25">
+              <div class="text-start"><small class="btn btn-primary m-1 opacity-50">{{ post.user }}</small></div>
+              <div class="card-body text-light p-0 col-12 col-lg-8 mx-auto">
+                <div>
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text my-1">{{ post.content|truncatewords:30 }}</p>
+                </div>
+                <img src="{{ post.img.url }}" class="img-fluid rounded" alt="">
+            </div>
+            <div class="w-50 mx-auto" style="min-width:333px;">
+              <a href="{% url 'fotoblog:post_details' post_id=post.id post_slug=post.slug page_slug=page.slug %}" class="btn btn-outline-info btn-sm mx-auto my-1">Read more</a>
+            {% if request.user.is_authenticated and request.user == post.user %}
+            <a href="{% url 'fotoblog:page_views' page_slug=page.slug post_slug=post.slug %}" class="btn btn-outline-info btn-sm mx-auto my-1">Edit</a>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+            <button class="btn btn-sm btn-danger" btn-slug="{{ post.slug }}">❤️</button>
+            {% endif %}
+            </div>
+        </div>
+          {% endfor %}
+{% elif fav_posts %}
+  
+{% for fav_post in fav_posts %}
+            <div class="card mb-3 border-success text-center w-100" style="max-width:333px;">
+              <div class="text-start"><small class="btn btn-primary m-1">{{ fav_post.post.user }}</small></div>
+              <div class="card-body text-light">
+                <div>
+                    <h5 class="card-title">{{ fav_post.post.title }}</h5>
+                    <p class="card-text my-1">{{ fav_post.post.content|truncatewords:10 }}</p>
+                </div>
+                <img src="{{ fav_post.post.img.url }}" class="img-thumbnail w-100 mx-1 my-auto"  alt="">
+            </div>
+            <div class="w-50 mx-auto">
+              <a href="{{ fav_post.post.get_absolute_url }}" class="btn btn-outline-info btn-sm mx-auto my-1">Read more</a>
+            {% if request.user.is_authenticated and request.user == fav_post.post.user %}
+            <a href="{% url 'fotoblog:page_views' page_slug=page.slug post_slug=fav_post.post.slug %}" class="btn btn-outline-info btn-sm mx-auto my-1">Edit</a>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+            <button class="btn btn-sm btn-danger" btn-slug="{{ fav_post.post.slug }}">❤️</button>
+            {% endif %}
+            </div>
+        </div>
+          {% endfor %}
+
+
+{% endif %}
+

@@ -1,0 +1,6 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1 class="text-center my-5">Weblog's Posts</h1>
+{% include 'components/list-group.html' with posts=posts %}
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h1>Ürün Detayı</h1>
+    {% if pic_id %}
+        {% include 'components/detail-card.html' %}
+    {% else %}
+        <p>Ürün bulunamadı.</p>
+    {% endif %}
+{% endblock %}

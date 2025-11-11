@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align:center;">
+        <h1>{{page_title}}</h1>
+        {% if items %}
+        <ul style="list-style: none;">
+        {% for item in items %}
+            {% if info == "categories" %}
+            <li><a href="{% url 'home' cat_slug=item.slug %}" style="text-decoration: none;">{{item.title}}</a></li>
+            {% elif info == "tags" %}
+            <li><a href="{% url 'home' cat_slug=item.category.slug tag_slug=item.slug %}" style="text-decoration: none;">{{item.title}}</a></li>
+            {% elif info == "xdevs" %}
+            <li><a href="{{item.pk}}" style="text-decoration: none;">{{item.title}}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if info == "devinfo" %}
+        {% for item in items %}
+        <h1>{{item.title}}</h1>
+        <h3>{{item.content}}</h3>
+        {% for tag in item.tag.all %}
+        <span style="padding: 3px; background-color: aqua; border-radius: 7px; margin-right: 3px;"><a href="{% url 'home' cat_slug=tag.category.slug tag_slug=tag.slug %}" style="text-decoration: none;">{{tag.title}}</a></span>
+        {% endfor %}
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
+
+

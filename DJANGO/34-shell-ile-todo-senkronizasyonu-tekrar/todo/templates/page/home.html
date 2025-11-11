@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Todo List</h1>
+        <ul>
+            {% for todo in todos %}
+            <li>{{forloop.counter}} - {{todo.title}}</li>
+            {% endfor %}
+        </ul>
+        <h1>Active Todos</h1>
+        <ul>
+            {% for active in active_todo %}
+            <li>{{forloop.counter}} - {{active.title}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

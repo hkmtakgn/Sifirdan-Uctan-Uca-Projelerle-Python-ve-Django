@@ -1,0 +1,9 @@
+<div class="div">
+    {% if category %}<h1>Kategori - {{category.title}}</h1>{% else %}<h1>Todos</h1>{% endif %}
+<ul class="list-group">
+    {% for item in todos %}
+    <li class="list-group-item"><a href="{% url 'todo_detail' id=item.pk %}" class="text-decoration-none">{{item.title}}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+

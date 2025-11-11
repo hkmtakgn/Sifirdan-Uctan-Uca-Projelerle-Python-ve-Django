@@ -1,0 +1,13 @@
+<div class="card mx-auto text-center border border-0" style="width: 18rem;">
+    <img class="rounded-pill" src="https://picsum.photos/id/{{developer.pk}}/500/300" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{developer.title}}</h5>
+      <h6 class="card-title">{{developer.category.title}}</h6>
+      {% for tag in developer.tag.all %}
+      <span class="badge rounded-pill text-bg-info"><a href="{% url 'tag_views' tag_slug=tag.slug %}" class="badge rounded-pill text-bg-info text-decoration-none">{{tag.title}}</a></span>
+      {% endfor %}
+    </div>
+    <a href="../" class="btn btn-primary">Back</a>
+  </div>
+
+

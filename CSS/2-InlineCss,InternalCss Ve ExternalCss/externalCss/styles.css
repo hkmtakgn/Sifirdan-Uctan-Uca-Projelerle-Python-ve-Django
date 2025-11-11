@@ -1,0 +1,14 @@
+.titleOne{
+    color: blue;
+    font-style: italic;
+}
+
+.titleTwo{
+    color: chocolate;
+    font-family: cursive;
+}
+
+.titleThree{
+    color: tomato;
+    letter-spacing: 7px;
+}

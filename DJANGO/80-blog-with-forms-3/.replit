@@ -1,0 +1,27 @@
+run = "cowsay Configure me!"
+entrypoint = "README.md"
+modules = ["python-3.11"]
+
+[nix]
+channel = "stable-24_05"
+packages = ["cowsay", "python-launcher"]
+
+[workflows]
+runButton = "Django Server"
+
+[[workflows.workflow]]
+name = "Django Server"
+author = 37314398
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python manage.py migrate"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python manage.py runserver 0.0.0.0:5000"
+
+[[ports]]
+localPort = 5000
+externalPort = 80

@@ -1,0 +1,11 @@
+<div class="card text-center p-1 border border-0 mx-auto" style="max-width:1000px;">
+      <small class="text-light bg-opacity opacity-25 border-0 rounded p-1">user : {{ post.user }}</small>
+  <hr class="text-light">
+  <img src="{{ post.img.url }}" class="card-img-top border border-0 rounded" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <p class="card-text">{{ post.content }}</p>
+    <a href="{% url 'fotoblog:page_views' page_slug=page.slug %}" class="btn btn-primary">Home</a>
+  </div>
+
+  

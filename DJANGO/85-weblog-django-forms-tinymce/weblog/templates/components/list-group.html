@@ -1,0 +1,8 @@
+<ul class="list-group">
+  {% if items %}
+  {% for item in items %}
+  <li class="list-group-item">{% include 'components/card.html' with item=item %}</li>
+  {% endfor %}
+  {% endif %}
+</ul>
+

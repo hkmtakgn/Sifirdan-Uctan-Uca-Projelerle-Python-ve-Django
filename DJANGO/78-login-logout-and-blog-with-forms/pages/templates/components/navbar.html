@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home_views' %}">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        {% if request.user.is_authenticated %}
+        <a class="nav-link" href="{% url 'blog_views' %}">Blog</a>
+        {% endif %}
+        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+      </div>
+    </div>
+    {% if request.user.is_authenticated %}
+    <a class="nav-link text-light" href="{% url 'logout_views' %}">Logout</a>
+    {% else %}
+    <a class="nav-link text-light" href="{% url 'login_views' %}">Login</a>
+    {% endif %}
+    <a class="nav-link text-light ms-3" href="{% url 'register_views' %}">Register</a>
+    <a class="nav-link text-light ms-3" href="/admin/" target="_blank">Admin</a>
+  </div>
+</nav>
+
+
