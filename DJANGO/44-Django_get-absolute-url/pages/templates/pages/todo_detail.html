@@ -1,8 +1,0 @@
-{% extends 'core/base.html' %}
-{% block content %}
-<h1>{{page_title}}</h1>
-{% if page_title == "Todo Detail" %}
-{% include 'components/card.html' with todo=todo %}
-{% endif %}
-{% endblock content %}
-

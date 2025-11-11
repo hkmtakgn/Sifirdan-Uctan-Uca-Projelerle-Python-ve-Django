@@ -1,8 +1,0 @@
-{% extends 'core/base.html' %}
-
-{% block content %}
-{% include 'components/post_form.html' with post_form=post_form %}
-{{ post_form.media }}
-{% include 'components/list-group.html' with items=items %}
-{% endblock content %}
-

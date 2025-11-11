@@ -1,8 +1,0 @@
-{% extends 'core/base.html' %}
-
-{% block content %}
-{% include 'core/navbar.html' %}
-<h1>{{page_title}}</h1>
-{% include 'components/list-group.html' with users=users %}
-{% include 'components/form-control.html' with admin="Hikmet" %}
-{% endblock content %}

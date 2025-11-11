@@ -1,9 +1,0 @@
-<div class="card text-bg-dark border border-0" style="width:23rem">
-  <img src="{{ post.post_img.url }}" class="card-img" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="card-title">{{ post.username }}</h5>
-    <p class="card-text">{{ post.content|truncatechars:300|safe }}</p>
-    <p class="card-text"><small>Last updated {{ post.created_at }} mins ago</small></p>
-  </div>
-</div>
-
